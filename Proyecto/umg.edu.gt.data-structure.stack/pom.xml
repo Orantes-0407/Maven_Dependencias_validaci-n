@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>umg.edu.gt.data-structure</groupId>
+  <artifactId>umg.edu.gt.data-structure.stack</artifactId>
+  <version>0.0.3-SNAPSHOT</version>
+  <profiles>
+  <profile>
+    <id>obfuscate</id>
+    <build>
+      <plugins>
+        <plugin>
+          <groupId>com.github.wvengen</groupId>
+          <artifactId>proguard-maven-plugin</artifactId>
+          <version>2.7.0</version>
+
+          <dependencies>
+            <dependency>
+              <groupId>com.guardsquare</groupId>
+              <artifactId>proguard-base</artifactId>
+              <version>7.7.0</version>
+            </dependency>
+          </dependencies>
+
+          <executions>
+            <execution>
+              <id>proguard-obfuscation</id>
+              <phase>package</phase>
+              <goals>
+                <goal>proguard</goal>
+              </goals>
+            </execution>
+          </executions>
+
+          <configuration>
+            <!-- En librería NO hay main -->
+            <injar>${project.build.finalName}.jar</injar>
+            <outjar>${project.build.finalName}-obf.jar</outjar>
+
+            <obfuscate>true</obfuscate>
+
+            <options>
+              <option>-dontoptimize</option>
+              <option>-dontshrink</option>
+              <option>-dontwarn</option>
+              <option>-dontnote</option>
+              <option>-printmapping ${project.build.directory}/proguard-map.txt</option>
+
+              <!-- Mantén clases públicas de la API si quieres (opcional) -->
+              <option>-keep public class umg.edu.gt.data_structure.stack.** { *; }</option>
+            </options>
+          </configuration>
+
+        </plugin>
+      </plugins>
+    </build>
+  </profile>
+</profiles>
+</project>
