@@ -1,6 +1,12 @@
 Maven_Dependencias_validación
-La ofuscación dificulta considerablemente la lectura del código, ya que los nombres de clases, métodos y variables son reemplazados por identificadores cortos sin significado.
+¿Qué tanto se dificulta la lectura?
 
-La estructura general del programa aún puede inferirse observando el flujo de ejecución, pero la comprensión detallada requiere más tiempo.
+La lectura del código se dificulta considerablemente después del proceso de ofuscación, ya que los nombres de las clases, métodos y variables son reemplazados por identificadores cortos y sin significado semántico. Esto provoca que el código pierda legibilidad y que sea más complejo identificar rápidamente la funcionalidad de cada componente sin un análisis más profundo.
 
-Sin embargo, el comportamiento del programa no cambia después de la ofuscación, lo cual confirma que el proceso es funcional.
+
+¿Se pierde claridad estructural?
+
+Sí, la claridad estructural se reduce en cierta medida, debido a que la organización lógica del programa ya no se puede interpretar fácilmente a partir de los nombres de los elementos. Sin embargo, la estructura general del flujo del programa aún puede identificarse mediante el análisis de llamadas de métodos y la secuencia de instrucciones, aunque requiere más tiempo y esfuerzo.
+¿Sigue siendo posible entender la lógica?
+
+Sí, sigue siendo posible comprender la lógica del programa, pero con mayor dificultad. Aunque los nombres han sido modificados, el comportamiento y las instrucciones internas permanecen intactas, por lo que un analista con conocimientos técnicos puede deducir la funcionalidad observando el flujo de ejecución, las condiciones y las operaciones realizadas.
